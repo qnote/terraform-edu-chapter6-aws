@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region  = var.region
+  region = var.region
   default_tags {
    tags = {
      Project = "Coffee-Mug-Cake"
@@ -22,7 +22,7 @@ resource "aws_vpc" "hashicat" {
   enable_dns_hostnames = true
 
   tags = {
-    name = "${var.prefix}-vpc-${var.region}"
+    name        = "${var.prefix}-vpc-${var.region}"
     environment = "Production"
   }
 }
