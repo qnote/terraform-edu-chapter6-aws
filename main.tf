@@ -10,11 +10,11 @@ terraform {
 provider "aws" {
   region = var.region
   default_tags {
-   tags = {
-     Project = "Coffee-Mug-Cake"
-     Owner   = "jerry-junior"
-   }
- }
+    tags = {
+      Project = "Coffee-Mug-Cake"
+      Owner   = "jerry-junior"
+    }
+  }
 }
 
 resource "aws_vpc" "hashicat" {
