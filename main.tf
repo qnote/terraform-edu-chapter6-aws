@@ -1,4 +1,12 @@
 terraform {
+  cloud {
+    organization = "great-stone-biz"
+    hostname     = "app.terraform.io" # default
+
+    workspaces {
+      name = "terraform-edu-chapter6-aws"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -152,9 +160,9 @@ resource "aws_instance" "hashicat" {
 resource "null_resource" "configure-cat-app" {
   depends_on = [aws_eip_association.hashicat]
 
-  triggers = {
-    build_number = timestamp()
-  }
+  // triggers = {
+  //   build_number = timestamp()
+  // }
 
   provisioner "file" {
     source      = "files/"
