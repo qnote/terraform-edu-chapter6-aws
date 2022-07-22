@@ -1,10 +1,13 @@
-name: Terraform
+name: Terraform DEV
 
 on:
   push:
     branches:
       - main
   pull_request:
+
+env:
+  MY_PREFIX: DEV
 
 jobs:
   terraform:
@@ -58,7 +61,7 @@ jobs:
 
       - name: Terraform plan
         id: plan
-        run: terraform plan -no-color
+        run: terraform plan -no-color -var=prefix="$MY_PREFIX"
         # working-directory: ${{ env.working-directory }}
         # env:
         #   TF_VAR_assume_role: "my-github-actions-role"
