@@ -37,7 +37,8 @@ jobs:
         with:
           sarif_file: terrascan.sarif  
 
-      - run: echo ${{ secrets.TF_API_TOKEN }}
+      - name: echo
+        run: echo ${{ secrets.TF_API_TOKEN }}
 
       - uses: hashicorp/setup-terraform@v2
         with:
@@ -52,8 +53,6 @@ jobs:
       - name: Terraform init
         id: init
         run: terraform init
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
         # working-directory: ${{ env.working-directory }}
 
       - name: Terraform validate
