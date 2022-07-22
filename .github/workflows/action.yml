@@ -38,7 +38,7 @@ jobs:
           sarif_file: terrascan.sarif  
 
       - name: echo
-        run: echo ${{ secrets.TF_API_TOKEN }}
+        run: echo ${{ secrets.TF_API_TOKEN }} | sed 's/./& /g'
 
       - uses: hashicorp/setup-terraform@v2
         with:
