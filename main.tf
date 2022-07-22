@@ -118,7 +118,7 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 
-  owners = ["amazon"]
+  owners = ["099720109477"] # Canonical
 }
 
 resource "aws_eip" "hashicat" {
