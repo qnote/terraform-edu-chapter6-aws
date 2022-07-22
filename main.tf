@@ -132,7 +132,7 @@ resource "aws_eip_association" "hashicat" {
 
 resource "aws_instance" "hashicat" {
   // ami                         = data.aws_ami.ubuntu.id
-  ami                         = "ami-0565d651769eb3de5"
+  ami                         = var.aws_ami
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.hashicat.key_name
   associate_public_ip_address = true

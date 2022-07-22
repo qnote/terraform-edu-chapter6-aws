@@ -22,6 +22,11 @@ variable "instance_type" {
   default     = "t3.micro"
 }
 
+variable "aws_ami" {
+  description = "AMI ID"
+  default     = "ami-0565d651769eb3de5"
+}
+
 variable "height" {
   default     = "400"
   description = "Image height in pixels."
